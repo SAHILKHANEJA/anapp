@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <!-- <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/> -->
+      <link rel="stylesheet" href="/static/materialize/css/materialize.min.css">
+      <!-- In <head> -->
+      <link href="/static/nouislider.min.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- In <body> -->
+      <script src="/static/nouislider.min.js"></script>
+      <script src="/static/wNumb.js"></script>
+      <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+      <script type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+      <script src="/static/materialize/js/materialize.min.js"></script>
+      <title> Page </title>
+      <style type="text/css">
+        /*.noUi-base{
+          background-color: red;
+        }*/
+        .radio-btn:before,.radio-btn:after{
+          opacity: 0;
+        }
+        .radio-btn{
+          padding: 0px !important;
+          margin-bottom: 20px;
+        }
+        .radio-a{
+          width: inherit;
+          background-color: white;
+          color:#4f5785;
+          padding: 0px;
+        }
+        .radio-alpha{
+          width: inherit;
+          background-color:#272934;
+          color:white;
+          padding: 0px;
+        }
+        .radio-a:hover{
+          background-color: inherit;
+        }
+        /*.with-gap:not:checked+label a{
+          background-color:#ffffff !important;
+        }
+        }*/
+        .with-gap:checked+label a{
+          background-color:#4f5785;
+          color: white;
+        }
+        .tab a{
+          color: rgba(39, 41, 52, 0.5) !important;
+          font-size: 12px !important;
+          padding: 0px !important;
+        }
+        a.active{
+          color: #4f5785 !important;
+        }
+        .tabs .indicator {
+          background-color:#4f5785 !important;
+        }
+        .noUi-horizontal .noUi-handle{
+          top:-8px;
+          border-radius: 50%;
+          height: 20px;
+          width: 20px;
+        }
+        .noUi-handle:after, .noUi-handle:before{
+          display: none;
+        }
+        label>a.footer-a{
+          opacity: 0.6;
+          color: black;
+        }
+        .radio-footer:checked+label a.footer-a{
+          opacity:1;
+          color: purple;
+        }
+      </style>
+    </head>
+<body style="background-color:#E0E0E0">
+  <nav>
+    <div class="nav-wrapper center" style="background-color: #272934;">
+      <a href="#" class="brand-logo"><img src="/static/cronlogo.png" width="52" height="22"/></a>
+    </div>
+  </nav>
+  <main>
+  <div class="row" style="margin-bottom: 10px">
+    <div class="col s12" style="padding: 0px">
+      <ul class="tabs">
+        <li class="tab col s4"><a href="#test1" class="active">Views</a></li>
+        <li class="tab col s4"><a href="#test2">Intrusion Archive</a></li>
+        <li class="tab col s4"><a href="#test4">Unit Status</a></li>
+      </ul>
+    </div>
+  </div>
+    {% block camera %}
+  
+    {% endblock %}
+  <div class="row" style="margin-bottom: 0px;margin-top: 65px">
+    <div class="col s12 valign-wrapper" style="height: 60px;background-color: white;position: fixed;bottom: 0px">
+      <div class="col s3 center">
+        <input class="radio-footer" name="choices" type="radio" id="mapview" value="mapview" checked/>
+        <label for="mapview" class="radio-btn" >
+          <a class="footer-a" href="/fetch_morchas">
+            <img src="/static/mapview.svg" height="24px" width="24px" />
+            <p style="margin: -6px;font-weight: 400"> Map View</p>
+          </a>
+        </label>
+      </div>
+      <div class="col s3 center">
+        <input class="radio-footer" name="choices" type="radio" id="camera" value="camera" />
+        <label for="camera" class="radio-btn">
+          <a class="footer-a" href="/slider">
+            <img src="/static/cctv.svg" height="24px" width="24px"/>
+            <p style="margin: -6px;font-weight: 400"> Camera</p>
+          </a>
+        </label>
+      </div>
+      <div class="col s3 center">
+        <input class="radio-footer" name="choices" type="radio" id="recording" value="recording"  />
+        <label for="recording" class="radio-btn">
+          <a class="footer-a">
+            <img src="/static/recording.svg" height="24px" width="24px" />
+            <p style="margin: -6px;font-weight: 400"> Recording</p>
+          </a>
+        </label>
+      </div>
+      <div class="col s3 center">
+        <input class="radio-footer" name="choices" type="radio" id="message" value="message"  />
+        <label for="message" class="radio-btn">
+          <a class="footer-a">
+            <img src="/static/message.svg" height="24px" width="24px" />
+            <p style="margin: -6px;font-weight: 400"> Message</p>
+          </a>
+        </label>
+      </div>
+    </div>
+  </div>
+  {% block scripts %}
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"companies": [{
+			"name": "Flipkart",
+			"description": "Flipkart is an online shopping destination for electronics, books, music, and movies",
+			"location": "Bengaluru",
+			"website": "www.flipkart.com",
+			"market": ["e-commerce", "fashion", "data as a service"],
+			"employees": 1000,
+			"stage": "Pre Series A",
+			"founders": ["Sachin Bansal", "Binny Bansal"]
+		}
+	]
+}

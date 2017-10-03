@@ -1,0 +1,55 @@
+{% extends 'headNav.html' %}
+{% block camera %}
+<div class="row valign-wrapper" style="background-color:#4f5785;height: 60px;margin-bottom:0px">
+    <div class="col s4 center" style="color:white;font-size: 20px">
+      Area-02 
+      
+    </div>
+    <div class="col s4 offset-s4 center" style="color:white;font-size:11px">
+    </div>
+  </div>
+  <div class="row" style="margin:10px;height: 218px;background-color:white;position:relative;">
+    <div class="row" style="margin-bottom: 60px">
+      <div class="col s12">
+        <div style="text-align:left;margin-top:16px;padding:0px" id="tx_rx" class="col s6">
+          <input class="with-gap" name="unit" type="radio" id="tx" value="tx" checked />
+          <label for="tx" class="radio-btn" style="width:80px;">
+            <a class="btn radio-a" style="padding:0px;font-size:9px">Camera_TX</a>
+          </label>
+          <input class="with-gap" name="unit" type="radio" id="rx" value="rx" />
+          <label for="rx" class="radio-btn" style="width:80px;margin-left:-5px;">
+            <a class="btn radio-a" style="padding:0px;font-size:9px;">Camera_RX</a>
+          </label>
+        </div>
+        <div style="text-align:right;margin-top:16px;" class="playback-show col s6">
+          <input class="with-gap" name="date" type="radio" id="day_b_y"/>
+          <label for="day_b_y" class="radio-btn" ><a class="btn radio-a" id="date0" style="width:32px;overflow:hidden;text-transform: capitalize" data-month=""></a></label>
+          <input class="with-gap" name="date" type="radio" id="yesterday"/>
+          <label for="yesterday" class="radio-btn" style="margin-left: -5px"><a style="width:32px;overflow:hidden;text-transform: capitalize" class="btn radio-a" id="date1" data-month=""></a></label>
+          <input class="with-gap" name="date" type="radio" id="today" checked/>
+          <label for="today" class="radio-btn" style="margin-left: -5px"><a class="btn radio-a" id="date2" style="width:60px;overflow:hidden;text-transform: capitalize" data-month=""></a></label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="test-slider" style="width:88%;left:8%;height: 6px;">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s3 center">
+      </div>
+    </div>
+    <div style="text-align: center" id="playback_live">
+      <input class="with-gap" name="options" type="radio" id="live" value="live" checked/>
+      <label for="live" class="radio-btn" style="position: absolute;bottom: 0px;left: 0px;margin-bottom: 10px;width: 50%;"><a class="btn radio-alpha col s12">Live</a></label>
+      <input class="with-gap" name="options" type="radio" id="playback" value="playback"/>
+      <label for="playback" class="radio-btn" style="position:absolute;bottom: 0px;margin-bottom: 10px;width: 50%;right:0px"><a class="btn radio-alpha col s12">Playback</a></label> 
+    </div> 
+  </div>
+  <div id="timing">
+  </div>
+  </main>
+{% endblock %}
+{% block scripts %}
+  <script src="/static/slider.js"></script>
+{% endblock %}
